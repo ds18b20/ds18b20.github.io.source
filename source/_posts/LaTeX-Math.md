@@ -29,12 +29,10 @@ $$f(x) = \sum_{i=0}^{N}\int_{a}^{b} g(t,i) \text{ d}t{6}\tag{1}$$
 
 得到结果为
 
+我们定义$f(x) = \sum_{i=0}^{N}\int_{a}^{b} g(t,i) \text{ d}t$. (行内公式)
 
-
-> 我们定义$f(x) = \sum_{i=0}^{N}\int_{a}^{b} g(t,i) \text{ d}t$. (行内公式)
->
-> 或者定义$f(x)$如下（行间公式）: 
-> $$f(x) = \sum_{i=0}^{N}\int_{a}^{b} g(t,i) \text{ d}t{6}\tag{1}$$
+或者定义$f(x)$如下（行间公式）: 
+$$f(x) = \sum_{i=0}^{N}\int_{a}^{b} g(t,i) \text{ d}t{6}\tag{1}$$
 
 ## 常用公式命令
 
@@ -68,17 +66,54 @@ $$f(x) = \sum_{i=0}^{N}\int_{a}^{b} g(t,i) \text{ d}t{6}\tag{1}$$
 | `\bigcup`           | ⋃     |      | `\bigcap`           | ⋂     |
 | `\bigcup_{i=1}^{N}` | ⋃Ni=1 |      | `\bigcap_{i=1}^{N}` | ⋂Ni=1 |
 
+### 矩阵
+
+使用`$$\begin{matrix}...\end{matrix}$$`来显示矩阵。
+
+```
+$$
+    \begin{matrix}
+    1 & x & x^2 \\
+    1 & y & y^2 \\
+    1 & z & z^2 \\
+    \end{matrix}
+$$
+```
+
+得到显示
+$$
+\begin{matrix}
+    1 & x & x^2 \\
+    1 & y & y^2 \\
+    1 & z & z^2 \\
+    \end{matrix}
+$$
+若要显示矩阵外的各种括号，可以替换`matrix`为`pmatrix` $\begin{pmatrix}1 & 2 \\3 & 4  \\\end{pmatrix}$, `bmatrix` $\begin{bmatrix}1 & 2 \\3 & 4  \\\end{bmatrix}$, `Bmatrix` $\begin{Bmatrix}1 & 2 \\3 & 4  \\\end{Bmatrix}$, `vmatrix` $\begin{vmatrix}1 & 2 \\3 & 4  \\\end{vmatrix}$, `Vmatrix` $\begin{Vmatrix}1 & 2 \\3 & 4  \\\end{Vmatrix}$
+
+若要在矩阵中添加省略用的点，可以使用`\cdots`$\cdots$,`\cdots`$\cdots$,`\vdots`$\vdots$，例如，
+$$
+\begin{pmatrix}
+ 1 & a_1 & a_1^2 & \cdots & a_1^n \\
+ 1 & a_2 & a_2^2 & \cdots & a_2^n \\
+ \vdots  & \vdots& \vdots & \ddots & \vdots \\
+ 1 & a_m & a_m^2 & \cdots & a_m^n    
+ \end{pmatrix}
+$$
+
 ### 其他常用命令
 
-| 命令               | 显示     |      | 命令            | 显示            |
-| ---------------- | ------ | ---- | ------------- | :------------ |
-| `\sqrt[3]{2}`    | 2√3    |      | `\sqrt{2}`    | 2√            |
-| `x^{3}`          | x3     |      | `x_{3}`       | x3            |
-| `\lim_{x \to 0}` | limx→0 |      | `\frac{1}{2}` | $\frac{1}{2}$ |
+| 命令               | 显示               |      | 命令            | 显示            |
+| ---------------- | ---------------- | ---- | ------------- | :------------ |
+| `\sqrt[3]{2}`    | $\sqrt[3]{2}$    |      | `\sqrt{2}`    | $\sqrt{2}$    |
+| `x^{3}`          | $x^{3}$          |      | `x_{3}`       | $x_{3}$       |
+| `\lim_{x \to 0}` | $\lim_{x \to 0}$ |      | `\frac{1}{2}` | $\frac{1}{2}$ |
 
 ### 添加公式代号
 
-在命令的最后加上`\tag{}`即可。例如`\frac{1}{2} = 0.5\tag{1}`显示结果为$\frac{1}{2} = 0.5\tag{1}$
+在命令的最后加上`\tag{}`即可。例如`\frac{1}{2} = 0.5\tag{1}`显示结果为,
+$$
+\frac{1}{2} = 0.5\tag{1}
+$$
 
 # 参考
 
