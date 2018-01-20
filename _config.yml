@@ -83,3 +83,12 @@ deploy:
   type: git
   repo: https://github.com/ds18b20/ds18b20.github.io.git
   branch: master
+
+# MathJax Plugin
+## Docs: https://www.mathjax.org/
+math:
+  engine: 'mathjax' # or 'katex'
+  mathjax:
+    # src: custom_mathjax_source
+    config:
+      # MathJax config
