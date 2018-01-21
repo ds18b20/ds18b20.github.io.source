@@ -74,7 +74,7 @@ $$f(x) = \sum_{i=0}^{N}\int_{a}^{b} g(t,i) \text{ d}t{6}\tag{1}$$
 
 得到结果为
 
-我们定义$f(x) = \sum_{i=0}^{N} \int_{a}^{b} g(t,i) \text{ d}t$. (行内公式)
+我们定义$f(x) = \sum_{i=0}^{N} \int_{a}^{b} g(t,i) \text{ d}t$ . (行内公式)
 
 或者定义$f(x)$如下（行间公式）: 
 $$f(x) = \sum_{i=0}^{N} \int_{a}^{b} g(t,i) \text{ d}t{6} \tag{1}$$
@@ -87,7 +87,7 @@ $$f(x) = \sum_{i=0}^{N} \int_{a}^{b} g(t,i) \text{ d}t{6} \tag{1}$$
 $$f(x) = a_1x^n + a_2x^{n-1} + a_3x^{n-2}$$
 ```
 
-显示为$f(x) = a_1x^n + a_2x^{n-1} + a_3x^{n-2}$
+显示为$f(x) = a_1x^n + a_2x^{n-1} + a_3x^{n-2}​$
 
 左右两侧都有上下标时，使用`\sideset`命令
 
