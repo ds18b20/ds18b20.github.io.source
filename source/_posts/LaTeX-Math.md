@@ -74,10 +74,10 @@ $$f(x) = \sum_{i=0}^{N}\int_{a}^{b} g(t,i) \text{ d}t{6}\tag{1}$$
 
 得到结果为
 
-我们定义$f(x) = \sum_{i=0}^{N}\int_{a}^{b} g(t,i) \text{ d}t$. (行内公式)
+我们定义$f(x) = \sum_{i=0}^{N} \int_{a}^{b} g(t,i) \text{ d}t$. (行内公式)
 
 或者定义$f(x)$如下（行间公式）: 
-$$f(x) = \sum_{i=0}^{N}\int_{a}^{b} g(t,i) \text{ d}t{6}\tag{1}$$
+$$f(x) = \sum_{i=0}^{N} \int_{a}^{b} g(t,i) \text{ d}t{6} \tag{1}$$
 
 ## 上下标
 
@@ -108,8 +108,8 @@ $$\lbracex*y\rbrace$$
 
 显示为
 
-$$\{x*y\}$$
-$$\lbrace x*y \rbrace$$
+$$\{{x*y}\}$$
+$$\lbrace{x*y}\rbrace$$
 
 单纯使用`\lbrace`和`\rbrace`显示的大括号并不会随着公式内容自动缩放。要实现自动缩放需要添加上`\left`和`\right`来修饰。
 
