@@ -358,3 +358,5 @@ $$
 http://blog.csdn.net/bendanban/article/details/44196101
 
 https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+
+http://stevenshi.me/2017/06/26/hexo-insert-formula/
