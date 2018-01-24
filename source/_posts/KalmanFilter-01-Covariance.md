@@ -32,9 +32,37 @@ tags:
 
 
 
+
 样本均值X是总体均值U的最优估计值。虽然可以用其他样本统计量来估计总体的均值，比如样本中位数，众数或中列数。但是样本均值通常能提供最优的估计性。理由之一，多个样本的均值拥有比其他统计量更好的一致性（更小的标准差）。理由之二，样本均值X是总体均值U的一个无偏估计量，这意味着样本均值分布的中心趋近于总体均值的中心。（参考《初级统计学》著者: 特里奥拉）
 
 标准差表示样本中各点到均值的距离的平均，即可以用来评价样本数据的离散程度。标准差越大意味着，离散程度越大，数据分布不集中。标准差公式中分母使用n-1而不是n，这样可以以较小的样本集来更好地逼近总体的标准差，即统计学上的“无偏估计”。方差=标准差的平方
+
+代码实现：
+
+直接按公式实现**标准差**，
+
+```python
+import numpy as np
+
+sample = np.array([40,44,38,50,60])
+
+sample_avr = np.average(sample)
+diff = sample - sample_avr
+sigma2 = (diff * diff).sum() / (len(sample)-1)
+print(pow(sigma2, (1/2)))
+```
+
+或者直接用Numpy的内置函数实现**标准差**，
+
+```python
+import numpy as np
+
+sample = np.array([40,44,38,50,60])
+
+print(np.std(array))
+# 非偏估计，用ddof参数指定
+print(np.std(array, ddof=1))
+```
 
 # 协方差的意义
 
@@ -62,6 +90,30 @@ $$
 $$
 cov(X,Y) = cov(Y,X)
 $$
+
+代码实现：
+
+按定义实现方差，
+
+```python
+import numpy as np
+
+array = np.array([40,44,38,50,60])
+sample_avr = np.average(array)
+diff = array - sample_avr
+sigma2_m = (diff * diff).sum() / (len(array)-1)
+print('manual var={}'.format(sigma2_m))
+```
+
+Numpy函数实现方差，
+
+```python
+import numpy as np
+
+array = np.array([40,44,38,50,60])
+sigma2_a = np.var(array, ddof=1)
+print('auto var={}'.format(sigma2_a))
+```
 
 # 协方差矩阵
 
@@ -105,8 +157,22 @@ cov12 = ((dim1 - dim1_mean) * (dim2 - dim2_mean)).sum() / (sample_num - 1)
 print(cov01,cov02,cov12)
 ```
 
+直接Numpy函数实现如下
+
+```python
+# 验证numpy.var-std-cov
+import numpy as np
+
+array2 = np.array([[0, 2], [1, 1], [2, 0]]).T
+cov_a = np.cov(array2)
+print('auto cov=')
+print(cov_a)
+```
+
 # 参考
 
 浅谈协方差矩阵http://pinkyjie.com/2010/08/31/covariance/
 
 在线LaTeX编辑[https://www.cnblogs.com/GarfieldEr007/p/5577727.html](http://latex.codecogs.com/eqneditor/editor.php)
+
+numpy.cov：https://docs.scipy.org/doc/numpy-1.9.0/reference/generated/numpy.cov.html
