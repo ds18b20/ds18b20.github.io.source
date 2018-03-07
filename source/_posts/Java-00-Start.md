@@ -3,9 +3,8 @@ title: Java-00-Start
 date: 2018-03-06 21:25:22
 categories: Java
 tags:
-- Python
+- Java
 - Start
-
 ---
 
 # What is Java
