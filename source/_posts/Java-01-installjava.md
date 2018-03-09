@@ -4,7 +4,7 @@ date: 2018-03-07 23:23:00
 categories: Java
 tags:
 - Java
-- Start
+- install
 ---
 
 # install java on ubuntu
