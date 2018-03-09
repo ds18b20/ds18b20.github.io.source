@@ -5,6 +5,7 @@ categories: Java
 tags:
 - Java
 - eclipse
+- install
 ---
 
 This article shows how to install eclipse on ubuntu.

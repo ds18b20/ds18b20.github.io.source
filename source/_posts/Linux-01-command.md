@@ -54,6 +54,15 @@ sudo gedit filename
 mv source destination
 ```
 
+# 重命名文件
+
+上述mv命令同样可以实现重命名的功能。
+
+```
+# mv 原名 新名
+mv oldname newname
+```
+
 # 拷贝文件
 
 ```
