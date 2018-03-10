@@ -18,7 +18,7 @@ class Student(object):
 len(Student())
 ```
 
-其实Python的class中还有很多这样有特火速用途的函数，利用这些特殊函数就可以定制属于自己的类。
+其实Python的class中还有很多这样有特殊用途的函数，利用这些特殊函数就可以定制属于自己的类。
 
 # 定制一个自己的类
 
@@ -150,11 +150,9 @@ c = Chain(path)
 c.users('michael').repos
 ```
 
-
-
 # _\_call\_\_
 
-实现直接运行实例，instance()
+实现直接运行实例，instance name()
 
 ```python
 class Student(object):
