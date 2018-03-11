@@ -1,5 +1,5 @@
 ---
-title: Java-00-Start
+title: Java-00-Install Java
 date: 2018-03-07 23:23:00
 categories: Java
 tags:
@@ -120,6 +120,14 @@ javac -version
    java -version
    ```
 
+
+# install on windows
+
+参考这篇文章：
+
+Windows环境下JDK安装与环境变量配置详细的图文教程
+
+http://www.cnblogs.com/liuhongfeng/p/4177568.html
 
 # reference
 
