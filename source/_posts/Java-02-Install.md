@@ -1,5 +1,5 @@
 ---
-title: Java-00-Install Java
+title: Java-02-Install
 date: 2018-03-07 23:23:00
 categories: Java
 tags:
