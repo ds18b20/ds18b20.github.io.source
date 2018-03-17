@@ -1,0 +1,29 @@
+---
+title: Java-09-ioRedirection
+date: 2018-03-17 23:12:06
+categories: Java
+tags:
+- Java
+- io Redirection
+
+---
+
+# io重定向
+
+
+
+一个简单的例子，
+
+```java
+PrintStream ps = new PrintStream("./log.txt");
+System.setOut(ps); // 设置使用新的输出流
+System.out.println("我会出现在项目根目录下的log.txt文件中~");
+```
+
+
+
+# 参考
+
+Java基础-重定向输出流
+
+http://blog.csdn.net/Young4Dream/article/details/68948947
