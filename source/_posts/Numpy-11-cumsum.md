@@ -3,13 +3,14 @@ title: Numpy-11-cumsum
 date: 2018-02-05 23:41:38
 categories: Python
 tags:
-- Numpy
 - Python
-- random
-
+- Numpy
+- cumsum
 ---
 
 # Numpy.cumsum
+
+输入Array，返回由各位置处的累加和组成的新Array。
 
 numpy.cumsum(a, axis=None, dtype=None, out=None)
 
