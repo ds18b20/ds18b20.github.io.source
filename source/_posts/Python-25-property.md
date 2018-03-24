@@ -4,10 +4,10 @@ date: 2018-02-20 21:11:23
 categories: Python
 tags:
 - Python
-- @property
+- property decorator
 ---
 
-# @property
+# property装饰
 
 ```python
 class Student(object):

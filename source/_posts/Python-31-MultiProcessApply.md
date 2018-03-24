@@ -1,9 +1,9 @@
 ---
-title: Python-31-MPapply
+title: Python-31-MultiProcessApply
 date: 2018-03-10 12:54:42
 categories: Python
 tags:
-- multiprocessing
+- multiprocess
 - apply
 - apply_async
 

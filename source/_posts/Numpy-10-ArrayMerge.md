@@ -9,62 +9,74 @@ tags:
 - row_stack
 - hstack
 - column_stack
+- concatenate
 ---
 
 # Merge Numpy Array
 
 ## Merge by row
 
-numpy.vstack()
+Stack arrays in sequence vertically (row wise).
 
-numpy.row_stack()
+`numpy.vstack()` can be replaced by `numpy.row_stack()`
 
 CODE:
 
 ```python
 >>> import numpy as np
 
->>> r1=np.array([-5, 0])
->>> r2=np.array([5, 0])
+>>> a=np.array([[1, 2, 3],[4, 5, 6]])
+>>> a
+array([[1, 2, 3],
+       [4, 5, 6]])
+>>> b=np.array([[10, 20, 30],[40, 50, 60]])
+>>> b
+array([[10, 20, 30],
+       [40, 50, 60]])
 
->>> r=np.vstack((p1,p2))
->>> r
-array([[-5,  0],
-       [ 5,  0]])
-
->>> r=np.row_stack((p1,p2))
->>> r
-array([[-5,  0],
-       [ 5,  0]])
-
+# vstack
+>>> np.vstack((a,b))
+array([[ 1,  2,  3],
+       [ 4,  5,  6],
+       [10, 20, 30],
+       [40, 50, 60]])
+# row_stack
+>>> np.row_stack((a,b))
+array([[ 1,  2,  3],
+       [ 4,  5,  6],
+       [10, 20, 30],
+       [40, 50, 60]])
 ```
 
 ## Merge by column
 
-numpy.hstack()
+Stack arrays in sequence horizontally (column wise).
+
+`numpy.hstack()` can be replaced by `numpy.row_stack()`
 
 ```python
->>> temp_array=p.copy()
->>> temp_array
-array([[-5,  0],
-       [ 5,  0]])
-       
->>> c1=temp_array[:,1]
->>> c1
-array([0, 0])
-
->>> c=np.hstack((temp_array,c1.reshape(2,1)))
->>> c
-array([[-5,  0,  0],
-       [ 5,  0,  0]])
+# hstack
+>>> np.hstack((a,b))
+array([[ 1,  2,  3, 10, 20, 30],
+       [ 4,  5,  6, 40, 50, 60]])
+# column_stack
+>>> np.column_stack((a,b))
+array([[ 1,  2,  3, 10, 20, 30],
+       [ 4,  5,  6, 40, 50, 60]])
 ```
 
-numpy.column_stack()
+## numpy.concatenate
 
 ```python
->>> c=np.column_stack((temp_array,c1))
->>> c
-array([[-5,  0,  0],
-       [ 5,  0,  0]])
+# axis=0
+>>> np.concatenate((a,b),axis=0)
+array([[ 1,  2,  3],
+       [ 4,  5,  6],
+       [10, 20, 30],
+       [40, 50, 60]])
+# axis=1
+>>> np.concatenate((a,b),axis=1)
+array([[ 1,  2,  3, 10, 20, 30],
+       [ 4,  5,  6, 40, 50, 60]])
 ```
 

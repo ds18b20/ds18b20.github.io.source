@@ -5,10 +5,10 @@ categories: Python
 tags:
 - Numpy
 - Python
-- nditer
+- slice
 ---
 
-# Python Slice
+# Python List Slice
 
 首先回顾Python的基本切片功能。注：list和tuple都可以进行切片。
 
@@ -198,6 +198,35 @@ array([2, 4, 6])
 ```
 
 ![SlicebyArray](Numpy-09-ArraySlice/SlicebyArray.JPG)
+
+## 三维ndarray
+
+一个应用的实例如下，
+
+```
+>>> a=np.arange(27).reshape(3,3,3)
+>>> a
+array([[[ 0,  1,  2],
+        [ 3,  4,  5],
+        [ 6,  7,  8]],
+
+       [[ 9, 10, 11],
+        [12, 13, 14],
+        [15, 16, 17]],
+
+       [[18, 19, 20],
+        [21, 22, 23],
+        [24, 25, 26]]])
+```
+
+假设上述3x3x3的array是一张读入的图片，其中第三维表示各点的RGB通道值。如果要过滤出RGB的某一通道值，那么可以使用array[:, :, n]来单独取出某一通道。
+
+```
+>>> a[:,:,2]
+array([[ 2,  5,  8],
+       [11, 14, 17],
+       [20, 23, 26]])
+```
 
 # 参考
 

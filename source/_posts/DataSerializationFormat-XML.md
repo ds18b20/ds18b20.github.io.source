@@ -5,9 +5,8 @@ categories: Data
 tags:
 - Serialization
 - XML
+
 ---
-
-
 
 html xhtml xml比较
 
