@@ -65,6 +65,8 @@ while not it.finished:
     it.iternext()
 ```
 
+既遍历了整个array也同时可以获取每个元素的下标multi_index，便于对元素进行读写操作。
+
 ## Modify element
 
 ```python
