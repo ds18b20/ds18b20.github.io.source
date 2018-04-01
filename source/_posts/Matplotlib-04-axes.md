@@ -17,7 +17,7 @@ tags:
 
 有了画布，继续画图时就需要决定在哪里，画多大的图。这一部分的设置就靠axes来表示，因为一个axes就是一个不包含坐标轴的画图区域。位置和尺寸均是用占figure整体尺寸的百分比来表示的，其取值为0-1之间的浮点数。
 
-![](C:\Users\ds18b20\PycharmProjects\Hexo\source\_posts\Matplotlib-04-axes\fig.png)
+![](Matplotlib-04-axes\fig.png)
 
 一个官方的例子如下，
 
@@ -60,7 +60,7 @@ plt.show()
 
 结果为，
 
-![](C:\Users\ds18b20\PycharmProjects\Hexo\source\_posts\Matplotlib-04-axes\axes.png)
+![](Matplotlib-04-axes\axes.png)
 
 
 
