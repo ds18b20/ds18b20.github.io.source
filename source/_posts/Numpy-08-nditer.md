@@ -43,7 +43,7 @@ As **a** and **a.T** are stored in the same sequence, **np.nditer(a)** and **np.
 
 ## Control iteration sequence
 
-**single index:**
+**single index:** 单个索引
 
 ```python
 # Fortran order
@@ -55,7 +55,7 @@ for x in np.nditer(a.T, order='C'):
     print(x)
 ```
 
-**multi index:**
+**multi index: **多重索引
 
 ```python
 # multi_index
@@ -66,6 +66,8 @@ while not it.finished:
 ```
 
 既遍历了整个array也同时可以获取每个元素的下标multi_index，便于对元素进行读写操作。
+
+注意，使用np.nditer进行循环遍历时**一定要记得加上it.iternext()语句**，否则会导致程序假死，无法向下执行。
 
 ## Modify element
 
@@ -84,5 +86,4 @@ By default, iteration use 'read-only'. To modify elements of arrays, op_flags sh
 
 Use 'external_loop'
 
-[Link](http://blog.csdn.net/lanchunhui/article/details/55657135)
-
+https://blog.csdn.net/lanchunhui/article/details/55657135
