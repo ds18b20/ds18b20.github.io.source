@@ -4,7 +4,7 @@ date: 2018-03-31 14:52:44
 categories: Python
 tags:
 - Numpy
-- Python
+- zip
 - dstack
 ---
 
@@ -32,7 +32,7 @@ print(y)
   [2 5]]]
 ```
 
-这里np.stack和内建的zip函数可以实现相同的功能。只是，输出的内部数据结构有区别，zip得到的是tuple组成的list，np。stack得到的是一个2维array。
+这里np.stack和内建的zip函数可以实现相同的功能。只是，输出的内部数据结构有区别，zip得到的是tuple组成的list，np.stack得到的是一个2维array。
 
 # zip 2d arrays
 

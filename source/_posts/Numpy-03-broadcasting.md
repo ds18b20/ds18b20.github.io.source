@@ -78,6 +78,44 @@ array([[1, 2],
 ValueError: operands could not be broadcast together with shapes (8,4,3) (2,1)
 ```
 
+## 具体理解
+
+有两个矩阵A和B，A为4维矩阵，B为三维矩阵。
+
+```
+A      (4d array):  8 x 1 x 6 x 1
+B      (3d array):      7 x 1 x 5
+Result (4d array):  8 x 7 x 6 x 5
+```
+
+如果可以进行element-wise运算，则要求各个维度位置上，要么大小相同，要么其中之一为1。上面的例子中7 x 1 x 5的7的左侧没有维度，这是可以的，但是7和5之间的1如果是空位的话则不可以broadcast。7 x 5时必须通过np.reshape方法来转换成7 x 1 x 5维度。
+
+```python
+>>> import numpy as np
+>>> a=np.array([[1,2,3],[4,5,6]])
+>>> b=np.array([[1,1,1],[2,2,2],[3,3,3]])
+>>> a
+array([[1, 2, 3],
+       [4, 5, 6]])
+>>> b
+array([[1, 1, 1],
+       [2, 2, 2],
+       [3, 3, 3]])
+>>> a-b
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: operands could not be broadcast together with shapes (2,3) (3,3)
+>>> aa=a.reshape(2,1,3)
+>>> aa-b
+array([[[ 0,  1,  2],
+        [-1,  0,  1],
+        [-2, -1,  0]],
+
+       [[ 3,  4,  5],
+        [ 2,  3,  4],
+        [ 1,  2,  3]]])
+```
+
 ## 矩阵乘法
 
 在进行矩阵的乘法（点乘）时，并没有上文所述element-wise运算时的broadcasting功能。
@@ -106,3 +144,6 @@ array([1, 2])
 (2,)
 ```
 
+# 参考
+
+[Python库numpy中的Broadcasting机制解析](https://blog.csdn.net/hongxingabc/article/details/53149655)

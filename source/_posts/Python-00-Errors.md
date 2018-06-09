@@ -34,3 +34,8 @@ print(grad)
 1. 开始位置初始化List的长度，如grad = [0, 0, 0]
 2. 使用list的append方法，如grad.append(i + delta)
 
+# ValueError: not enough values to unpack (expected 11, got 1)
+
+a, b, c = func()
+
+当等号左侧的元素数量和函数func的返回值数目不相等时，会报此错误。

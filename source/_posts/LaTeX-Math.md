@@ -240,9 +240,9 @@ $$
 ```
 $$
     \begin{matrix}
-    1 & x & x^2 \\
-    1 & y & y^2 \\
-    1 & z & z^2 \\
+    1 & x & x^2 \\\
+    1 & y & y^2 \\\
+    1 & z & z^2 \\\
     \end{matrix}
 $$
 ```
@@ -250,13 +250,21 @@ $$
 得到显示
 $$
 \begin{matrix}
-    1 & x & x^2 \\
-    1 & y & y^2 \\
-    1 & z & z^2 \\
-    \end{matrix}
+    1 & x & x^2 \\\
+    1 & y & y^2 \\\
+    1 & z & z^2 
+\end{matrix}
 $$
-若要显示矩阵外的各种括号，可以替换`matrix`为`pmatrix` $\begin{pmatrix}1 & 2 \\3 & 4  \\\end{pmatrix}$, `bmatrix` $\begin{bmatrix}1 & 2 \\3 & 4  \\\end{bmatrix}$, `Bmatrix` $\begin{Bmatrix}1 & 2 \\3 & 4  \\\end{Bmatrix}$, `vmatrix` $\begin{vmatrix}1 & 2 \\3 & 4  \\\end{vmatrix}$, `Vmatrix` $\begin{Vmatrix}1 & 2 \\3 & 4  \\\end{Vmatrix}$
+若要显示矩阵外的各种括号，可以
 
+替换`matrix`为`pmatrix` , `bmatrix` , `Bmatrix`, `vmatrix` , `Vmatrix`:
+$$
+\begin{pmatrix}1 & 2 & 3  \end{pmatrix}\\\
+\begin{bmatrix}1 & 2 & 3  \end{bmatrix}\\\
+\begin{Bmatrix}1 & 2 & 3  \end{Bmatrix}\\\
+\begin{vmatrix}1 & 2 & 3  \end{vmatrix}\\\
+\begin{Vmatrix}1 & 2 & 3  \end{Vmatrix}
+$$
 若要在矩阵中添加省略用的点，可以使用`\cdots`$\cdots$,`\cdots`$\cdots$,`\vdots`$\vdots$，例如，
 $$
 \begin{pmatrix}
@@ -270,71 +278,51 @@ $$
 多个矩阵组成等式时，
 
 ```
-$$\left[
+\left[
 \begin{matrix}
-V_A \\\\
-V_B \\\\
-V_C \\\\
+V_A \\\
+V_B \\\
+V_C
 \end{matrix}
 \right] =
 \left[
 \begin{matrix}
-1 & 0 & L \\\\
--cosψ & sinψ & L \\\\
+1 & 0 & L \\\
+-cosψ & sinψ & L \\\
 -cosψ & -sinψ & L
 \end{matrix}
 \right]
 \left[
 \begin{matrix}
-V_x \\\\
-V_y \\\\
-W \\\\
+V_x \\\
+V_y \\\
+W
 \end{matrix}
-\right] $$
+\right]
 ```
 
 显示为
 $$
 \left[
-
 \begin{matrix}
-
-V_A \\
-
-V_B \\
-
-V_C \\
-
+V_A \\\
+V_B \\\
+V_C 
 \end{matrix}
-
-\right] =
-
+\right]=
 \left[
-
 \begin{matrix}
-
-1 & 0 & L \\
-
--cosψ & sinψ & L \\
-
+1 & 0 & L \\\
+-cosψ & sinψ & L \\\
 -cosψ & -sinψ & L
-
 \end{matrix}
-
 \right]
-
 \left[
-
 \begin{matrix}
-
-V_x \\
-
-V_y \\
-
-W \\
-
+V_x \\\
+V_y \\\
+W
 \end{matrix}
-
 \right]
 $$
 

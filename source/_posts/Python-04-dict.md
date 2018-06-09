@@ -120,3 +120,11 @@ a[2]=9 # [[1, 2], 3, 9]
 [[1, 2], 3, 4]
 ```
 
+# 参考
+
+关于dict中key类型的定义可以参见
+
+[Python dictionary keys besides strings and integers?](https://stackoverflow.com/questions/4348232/python-dictionary-keys-besides-strings-and-integers)
+
+[5.5. Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
+

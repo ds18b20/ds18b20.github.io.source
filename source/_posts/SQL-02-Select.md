@@ -3,13 +3,11 @@ title: SQL-02-Select
 date: 2018-04-14 10:26:43
 categories: SQL
 tags:
-- database
 - SQL
+- select
 ---
 
 # 查询
-
-# select
 
 select用于从数据库中按条件查询，返回一个二维表，这个二维表包含列名和每一行的数据。
 

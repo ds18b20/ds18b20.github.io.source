@@ -62,7 +62,20 @@ plt.show()
 
 ![](Matplotlib-04-axes\axes.png)
 
+# 隐藏坐标轴
 
+```python
+fig=plt.figure(frameon=False)
+fig.set_size_inches(1, 1)
+
+ax = plt.Axes(fig, [0., 0., 1., 1.])
+ax.set_axis_off()
+fig.add_axes(ax)
+
+I = mpimg.imread(u"sample.png")
+ax.imshow(I)
+fig.savefig(u"sample.jpg", dpi=32)
+```
 
 # 参考
 

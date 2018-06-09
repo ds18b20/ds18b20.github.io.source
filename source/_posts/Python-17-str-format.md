@@ -31,8 +31,8 @@ tags:
 ```python
 string = "Hello\tWill\n"
 
-print("%s" %string)
-print("%r" %string)
+print("%s" % string)
+print("%r" % string)
 ```
 
 输出结果为
@@ -112,7 +112,9 @@ print s.substitute(bname="TCP/IP")
 
 # 字符串内建函数format()
 
-从Python2.6开始新增的字符串格式化函数，使用{}当作各行思华操作符。
+## 基本使用
+
+从Python 2.6开始新增字符串格式化函数format，使用{}当作操作符。
 
 ```python
 # 位置参数
@@ -153,6 +155,57 @@ print '{:#X}'.format(11)
 print '{:,}'.format(15700000000)
 ```
 
+## use Tuple or Dict
+
+可以使用tuple或dict来做format的参数，
+
+```python
+# Format with tuple
+tmp_tuple = ('val0', 23.5)
+print("Format string with {0[0]}, {0[1]}".format(tmp_tuple))
+print("Format string with {}, {}".format(*tmp_tuple))
+print("Format string with {1}, {0}".format(*tmp_tuple))
+print("Format string with {0}, {1}, {0}".format(*tmp_tuple))
+
+# Format with dict
+# 注意此处key不能是纯数字的字符串，参见参考链接3
+# 因为dict并不要求key必须是str，参见链接4
+tmp_dict_0 = {'val0': 23.5, 'val1': 'xxx'}
+tmp_dict_1 = {'val0': 12.6, 'val1': 'yyy'}
+print("Format string with {0[val0]}, {1[val0]}".format(tmp_dict_0, tmp_dict_1))
+print("Format string with {0[val0]:0.3f}".format(tmp_dict_0))
+print("Format string with {val0:0.3f}".format(**tmp_dict_0))
+```
+
+输出，
+
+```
+Format string with val0, 23.5
+Format string with val0, 23.5
+Format string with 23.5, val0
+Format string with val0, 23.5, val0
+Format string with 23.5, 12.6
+Format string with 23.500
+Format string with 23.500
+```
+
+## 使用类的属性
+
+```python
+class Person:
+    def __init__(self, name, age, gender):
+        self.name = name
+        self.age = age
+        self.gender = gender
+        
+    def __str__(self):
+        return '{self.name} is a {self.age} years old {self.gender}'.format(self=self)
+
+str(Person('Tom', 26, 'man'))
+```
+
+输出，`'Tom is a 26 years old man'`
+
 # str的内建函数
 
 通过 dir(str) 来查看。
@@ -161,7 +214,13 @@ print '{:,}'.format(15700000000)
 
 # 参考
 
-Python格式化字符串
+[Python格式化字符串](https://www.cnblogs.com/wilber2013/p/4641616.html)
 
-https://www.cnblogs.com/wilber2013/p/4641616.html
+[Python强大的格式化format](https://www.cnblogs.com/wongbingming/p/6848701.html)
+
+[String formatting [str.format()] with a dictionary key which is a str() of a number](https://stackoverflow.com/questions/11130790/string-formatting-str-format-with-a-dictionary-key-which-is-a-str-of-a-num)
+
+[5.5. Dictionaries：](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
+
+> Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by *keys*, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can’t use lists as keys, since lists can be modified in place using index assignments, slice assignments, or methods like `append()` and `extend()`. 
 

@@ -9,7 +9,7 @@ tags:
 
 # softmax函数
 
-函数地难以如下，
+函数的定义如下，
 $$
 \begin{eqnarray} 
   a^L_j = \frac{e^{z^L_j}}{\sum_k e^{z^L_k}},
@@ -45,3 +45,23 @@ axarr[1].bar(np.arange(3),b, color='r')
 
 ![](Math-02-SoftMax\softmax.png)
 
+# 注意防止溢出
+
+$$
+y_j=\frac{e^{a_{k}}}{\sum^{N}_{i=1}e^{a_{i}}}
+$$
+
+应用softmax函数时，应该注意防止分子分母过大带来的计算溢出。
+
+由于包含指数运算，当a_i绝对值过大时，e^a_i会指数级增大，这就会带来overflow溢出错误。可以注意到其实各元素的a_i的差值并不是很大，处理方法为，分子分母同时除以一个e^C，其中C = Max(a_i)。
+$$
+y_{j}=\frac{e^{a_{k}}-C}{\sum^{N}_{i=1}e^{a_{i}}-C}
+$$
+
+$$
+C=max({a_{i}})
+$$
+
+就可以大幅减小计算数值，这样就基本不会发生overflow了。
+
+事实上，差值过大时，也不用SoftMax函数来增强输出效果了。

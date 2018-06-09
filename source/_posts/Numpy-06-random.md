@@ -50,7 +50,11 @@ array([[1, 2, 5],
 
 numpy.random.choice(a, size=None, replace=True, p=None)
 
-`a : 1-D array-like or int    If an ndarray, a random sample is generated from its elements.     If an int, the random sample is generated as if a was np.arange(n)size : int or tuple of ints, optional replace : boolean, optional    Whether the sample is with or without replacementp : 1-D array-like, optional    The probabilities associated with each entry in a. If not given the sample assumes a uniform distribution over all entries in a.`
+> a : 1-D array-like or int If an ndarray, a random sample is generated from its elements.  If an int, the random sample is generated as if a was np.arange(n) 
+>
+> size : int or tuple of ints, optional  replace : boolean, optional Whether the sample is with or without replacement
+>
+> p : 1-D array-like, optional The probabilities associated with each entry in a. If not given the sample assumes a uniform distribution over all entries in a. 
 
 ```python
 >>> np.random.choice(10)
@@ -60,5 +64,19 @@ array([3, 2, 0, 6, 0, 0, 2, 2, 4, 5])
 >>> np.random.choice(10,(2,3))
 array([[2, 2, 3],
        [0, 4, 1]])
+
+>>> classes = ['plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 's
+hip', 'truck']
+>>> classes
+['plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+
+>>> np.random.choice(classes,2)
+array(['deer', 'ship'], dtype='<U5')
+
+>>> np.random.choice(range(3),p=[0.05,0.05,0.9])
+2
 ```
 
+.choice(x)的参数x可以是Integer也可以是一维数组1-D Array。
+
+`np.random.choice(range(3),p=[0.05,0.05,0.9])`表示从range(3)序列中按照p参数指定的概率分布随机选择一个元素返回。
