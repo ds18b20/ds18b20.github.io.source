@@ -23,7 +23,19 @@ tags:
 
 ## add
 
-$y=a+b$，此时y处的梯度可以直接不加改变地直接传递到a和b上。
+gradient distrabuter
+$y=a+b$，此时y处的梯度$ \frac {\partial L} {\partial y}$直接不加改变地传递到a和b上。
 
 ## mul
+
+gradient switcher
+$y=a*b$，此时y处的梯度$ \frac {\partial L} {\partial y}$传递到a时需要乘以b，传递到b时需要乘以a。
+
+## max
+
+gradient router
+$y=max(a, b)$，此时y处的梯度$ \frac {\partial L} {\partial y}$直接传递到a或者b上。故a等于y处传来的梯度，b等于0；或者a等于0，而b等于y处传来的梯度。
+
+
+
 
