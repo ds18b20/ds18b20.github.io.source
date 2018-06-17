@@ -1,6 +1,6 @@
 ---
 title: DeepLearning-01-pooling
-date: 2018-04-22 10:51:50
+date: 2018-06-16 14:01:44
 categories: DeepLearning
 tags:
 - Deep Learning
@@ -67,6 +67,4 @@ print(a)
  [0 1 1 1 1 1 1 1 0]
  [0 0 0 0 0 0 0 0 0]]
 ```
-
-
 

@@ -80,6 +80,14 @@ ValueError: operands could not be broadcast together with shapes (8,4,3) (2,1)
 
 ## 具体理解
 
+阵列不需要有相同的维度。例如，如果你有一个256x256x3的RGB阵列，你想要对每一种颜色加一个权重，你就可以乘以一个拥有3个元素的一维阵列。将两个阵列的各维度尺寸展开，从后往前匹配，如果满足了上面的两个条件，则这两个阵列是兼容的。 
+
+```
+Image  (3d array): 256 x 256 x 3
+Scale  (1d array):             3
+Result (3d array): 256 x 256 x 3
+```
+
 有两个矩阵A和B，A为4维矩阵，B为三维矩阵。
 
 ```

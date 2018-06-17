@@ -1,6 +1,6 @@
 ---
 title: DeepLearning-02-ActivationFunction
-date: 2018-04-22 10:55:34
+date: 2018-06-16 14:01:54
 categories: DeepLearning
 tags:
 - Deep Learning

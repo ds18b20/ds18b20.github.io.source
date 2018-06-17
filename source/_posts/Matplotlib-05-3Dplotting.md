@@ -40,10 +40,7 @@ ax.set_zlabel("Z-axis")
 
 # reference
 
-Matplotlib Tutorial: 5. 3D plotting
+[Matplotlib Tutorial: 5. 3D plotting](http://jakevdp.github.io/mpl_tutorial/tutorial_pages/tut5.html)
 
-http://jakevdp.github.io/mpl_tutorial/tutorial_pages/tut5.html
+[mplot3d tutorial](https://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html)
 
-Chapter 7. Working with 3D Figures
-
-http://apprize.info/python/matplotlib/7.html
