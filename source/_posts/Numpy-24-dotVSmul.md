@@ -1,6 +1,7 @@
 ---
 title: Numpy-24-dotVSmul
 date: 2018-05-19 08:55:59
+categories: Python
 tags:
 - Numpy
 - speed

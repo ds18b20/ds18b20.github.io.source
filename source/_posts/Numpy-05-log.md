@@ -38,3 +38,12 @@ Return the base 10 logarithm of the input array, element-wise.
 1.0
 ```
 
+# ERROR: “Divide by zero encountered in log” when not dividing by zero
+
+由于log函数$y = log(x)$是一条单调递增曲线，且在x=0处y取值为负无穷。所以在计算机中计算log时，要注意避免x=0。
+计算时可以在x的基础上添加一个微笑的delta，即log(x+delta)。
+
+# 参考
+
+[“Divide by zero encountered in log” when not dividing by zero](https://stackoverflow.com/questions/36229340/divide-by-zero-encountered-in-log-when-not-dividing-by-zero/36229376)
+

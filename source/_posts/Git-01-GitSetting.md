@@ -52,6 +52,8 @@ $ git config --global user.email "Your Email@example.com"
    # -t: key type
    # -C: Your Email
    ssh-keygen -t rsa -C "Your Email@gmail.com"
+   # to generate more than one key pairs
+   $ ssh-keygen -t rsa -C "Email" -f new_key_name
    ```
 
    If you don't want to set password, press SPACE for 3 times.

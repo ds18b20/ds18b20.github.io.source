@@ -1,6 +1,7 @@
 ---
 title: Numpy-23-Numpy2NativeType
 date: 2018-05-16 21:19:45
+categories: Python
 tags:
 - Numpy
 - Native type
