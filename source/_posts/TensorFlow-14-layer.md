@@ -16,16 +16,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def add_layer(inputs, in_size, out_size, activation_function=None):
-    Weights = tf.Variable(tf.random_normal([in_size, out_size]))
-    biases = tf.Variable(tf.zeros([1, out_size]) + 0.1)
-    W_m_p = tf.matmul(inputs, Weights) + biases
-    if activation_function is None:
-        outputs = W_m_p
+def add_layer(input_data, in_size, out_size, activator=None):
+    weights = tf.Variable(tf.random_normal([in_size, out_size]))
+    biases = tf.Variable(tf.zeros([1, out_size]))
+    Affine = tf.add(tf.matmul(input_data, weights), biases)
+    if activator is None:
+        output_data = Affine
     else:
-        outputs = activation_function(W_m_p)
+        output_data = activator(Affine)
 
-    return outputs
+    return output_data
+
 
 # sample data
 x_data = np.linspace(-1, 1, 300)[:, np.newaxis]
@@ -35,25 +36,29 @@ y_data = np.square(x_data) - 0.5 + noise
 xs = tf.placeholder(dtype=tf.float32, shape=[None, 1])
 ys = tf.placeholder(dtype=tf.float32, shape=[None, 1])
 
-layer_1 = add_layer(xs, 1, 10, activation_function=tf.nn.relu)
-prediction = add_layer(layer_1, 10, 1, activation_function=None)
+layer_1 = add_layer(input_data=xs, in_size=1, out_size=10, activator=tf.nn.relu)
+prediction = add_layer(input_data=layer_1, in_size=10, out_size=1, activator=None)
 
 # loss function
-loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction), reduction_indices=[1]))
+loss = tf.reduce_mean(tf.square(ys - prediction))  # no reduction_indices selected
+# loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction), reduction_indices=1))
+
 # training
-train_step = tf.train.GradientDescentOptimizer(learning_rate=0.1).minimize(loss)
+# train_step = tf.train.AdamOptimizer(learning_rate=1e-3).minimize(loss)  # Adam
+train_step = tf.train.GradientDescentOptimizer(learning_rate=1e-3).minimize(loss)  # Gradient Descent
 # initialize
 init = tf.global_variables_initializer()
 
 loss_lst =[]
-N = 100
+N = 2000
+epoch = 100
 with tf.Session() as sess:
     sess.run(init)
     for i in range(N):
         sess.run(train_step, feed_dict={xs: x_data, ys: y_data})
         ls = sess.run(loss, feed_dict={xs: x_data, ys: y_data})
         loss_lst.append(ls)
-        if i % 10 == 0:
+        if i % epoch == 0:
             print(ls)
 
     colors = np.random.rand(N)
@@ -66,19 +71,19 @@ with tf.Session() as sess:
 拆开来分析，
 
 ```python
-def add_layer(inputs, in_size, out_size, activation_function=None):
-    Weights = tf.Variable(tf.random_normal([in_size, out_size]))
-    biases = tf.Variable(tf.zeros([1, out_size]) + 0.1)
-    W_m_p = tf.matmul(inputs, Weights) + biases
-    if activation_function is None:
-        outputs = W_m_p
+def add_layer(input_data, in_size, out_size, activator=None):
+    weights = tf.Variable(tf.random_normal([in_size, out_size]))
+    biases = tf.Variable(tf.zeros([1, out_size]))
+    Affine = tf.add(tf.matmul(input_data, weights), biases)
+    if activator is None:
+        output_data = Affine
     else:
-        outputs = activation_function(W_m_p)
+        output_data = activator(Affine)
 
-    return outputs
+    return output_data
 ```
 
-这一段实现了一个层定义函数。
+上面这一段实现了一个层定义函数。
 
 ```python
 # sample data
@@ -87,14 +92,14 @@ noise = np.random.normal(0, 0.05, x_data.shape)
 y_data = np.square(x_data) - 0.5 + noise
 ```
 
-这一段生成了一组x和y的样本，加入了random量。
+上面这一段生成了一组x和y的样本，加入了random量。
 
 ```python
 xs = tf.placeholder(dtype=tf.float32, shape=[None, 1])
 ys = tf.placeholder(dtype=tf.float32, shape=[None, 1])
 ```
 
-这一段定义了两个placeholder，shape=[None, 1]，表示输入和输出行数不限，列数为1。这样提高了模型的通用性，因为可以随意改变样本的数量，本例中可以把输入[300, 1]改成任意多行，比如[500, 1]。
+上面这一段定义了两个placeholder，shape=[None, 1]，表示输入和输出行数不限，列数为1。这样提高了模型的通用性，因为可以随意改变样本的数量，本例中可以把输入[300, 1]改成任意多行，比如[500, 1]。
 
 ```python
 layer_1 = add_layer(xs, 1, 10, activation_function=tf.nn.relu)
@@ -105,9 +110,12 @@ prediction = add_layer(layer_1, 10, 1, activation_function=None)
 
 ```python
 # loss function
-loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction), reduction_indices=[1]))
+loss = tf.reduce_mean(tf.square(ys - prediction))  # no reduction_indices selected
+# loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction), reduction_indices=1))
+
 # training
-train_step = tf.train.GradientDescentOptimizer(learning_rate=0.1).minimize(loss)
+# train_step = tf.train.AdamOptimizer(learning_rate=1e-3).minimize(loss)  # Adam
+train_step = tf.train.GradientDescentOptimizer(learning_rate=1e-3).minimize(loss)  # Gradient Descent
 # initialize
 init = tf.global_variables_initializer()
 ```
@@ -116,24 +124,25 @@ init = tf.global_variables_initializer()
 
 ```python
 loss_lst =[]
-N = 100
+N = 2000
+epoch = 100
 with tf.Session() as sess:
     sess.run(init)
     for i in range(N):
         sess.run(train_step, feed_dict={xs: x_data, ys: y_data})
         ls = sess.run(loss, feed_dict={xs: x_data, ys: y_data})
         loss_lst.append(ls)
-        if i % 10 == 0:
+        if i % epoch == 0:
             print(ls)
 
     colors = np.random.rand(N)
-    plt.scatter(range(N), loss_lst, c='grey', marker='X')
+    plt.scatter(range(N), loss_lst, c='grey',marker='X')
     plt.xlabel('training step')
     plt.ylabel('loss')
     plt.show()
 ```
 
-训练N=100步，每隔10步输出一次loss。最后把所有loss放到一个list里，并用scatter描绘出来。
+训练N=100步，每隔100步输出一次loss。最后把所有loss放到一个list里，并用scatter描绘出来。
 
 ![](TensorFlow-14-layer\layer.png)
 

@@ -7,9 +7,7 @@ tags:
 
 ---
 
-# 不可变变量
-
-# error
+# 不可变变量 error
 
 ```python
 >>> s='123'

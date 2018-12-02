@@ -3,7 +3,7 @@ title: PyCharm-02-importError
 date: 2018-08-07 23:22:31
 categories: PyCharm
 tags:
-- Python
+- import local
 
 ---
 

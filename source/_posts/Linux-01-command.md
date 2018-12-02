@@ -6,7 +6,18 @@ tags:
 - Linux
 - Ubuntu
 - Basic Command
+
 ---
+
+# list
+
+ls
+
+```
+ls -l
+```
+
+加入`-l`参数，用来显示详细信息，包括日期、大小、权限、所有者等信息。
 
 # 删除文件夹
 
@@ -28,8 +39,6 @@ rm -rf foldername
 -r表示向下递归，无论有多少下级目录，一并删除。
 
 -f表示强行删除，没有提示信息。
-
-
 
 # 新建文件
 
@@ -91,3 +100,8 @@ ln -s filename /usr/local/bin/less
 
 无论是软链接还是硬链接，源地址的文件和目标地址的文件都能保持同步。
 
+# Reference
+
+Ubuntu 命令行教程
+
+http://teliute.org/linux/Tecli/lesson5/lesson5.html

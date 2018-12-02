@@ -69,5 +69,7 @@ rn = tf.random_normal(shape=[2, 3], mean=1.0, stddev=1.0, dtype=tf.float32, name
 - [`tf.random_gamma`](https://www.tensorflow.org/api_docs/python/tf/random_gamma)
 - [`tf.set_random_seed`](https://www.tensorflow.org/api_docs/python/tf/set_random_seed)
 
+# Reference
+
 https://www.tensorflow.org/api_guides/python/constant_op
 

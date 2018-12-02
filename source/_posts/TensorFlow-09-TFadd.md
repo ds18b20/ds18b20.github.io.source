@@ -37,7 +37,6 @@ print(dir(tf.Tensor))
 返回结果，
 
 ```python
-C:\Users\ds18b20\Anaconda3\envs\tensorflow\python.exe C:/Users/ds18b20/PycharmProjects/TensorFlow/tutorial/demo.py
 node {
   name: "Placeholder"
   op: "Placeholder"

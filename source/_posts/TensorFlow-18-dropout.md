@@ -79,7 +79,7 @@ image是被flaten的1\*64的行向量，要显示的话需要reshape成8\*8。la
 
 # dropout
 
-神经网络由于配置不当会导致`过拟合`(over fitting)，即训练得到的Weights和biases岁训练样本适应的很好(过好)，但是对测试样本适应得不好的现象。出现over fitting之后神经网络的通用性降低，当应用于具体实例时不能准确预测。
+神经网络由于配置不当会导致`过拟合`(over fitting)，即训练得到的Weights和biases对训练样本适应的很好(过好)，但是对测试样本适应得不好的现象。出现over fitting之后神经网络的通用性降低，当应用于具体实例时不能准确预测。
 
 
 

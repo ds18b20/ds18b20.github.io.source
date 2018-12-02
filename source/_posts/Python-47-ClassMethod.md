@@ -4,7 +4,7 @@ date: 2018-08-11 09:22:43
 categories: Python
 tags:
 - class method
-- @classmethod
+- classmethod
 ---
 
 # Python ClassMethod

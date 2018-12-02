@@ -9,7 +9,7 @@ tags:
 
 # TensorFlow使用GPU
 
-没有指定使用CPU还是GPU的时候，TF默认寻找机器中的第一个GPU，并且占用该GPU的所有显存资源。如果没有找到GPU那就使用第一个CPU来云孙啊。
+没有指定使用CPU还是GPU的时候，TF默认寻找机器中的第一个GPU，并且占用该GPU的所有显存资源。如果没有找到GPU那就使用第一个CPU来运算。
 
 > TensorFlow对于设备的表示：”/cpu:0”表示第一块CPU，”/gpu:0”表示第一块GPU，其他情况以此类推。
 
@@ -44,8 +44,6 @@ ing
 # 手动分配GPU资源
 
 ing
-
-
 
 # 参考
 
