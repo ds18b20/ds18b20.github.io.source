@@ -72,7 +72,7 @@ sudo mkdir appname
 新建venv，使用-p参数指定python版本：
 
 ```
-virtualenv -p /usr/bin/python3.6 venv
+sudo virtualenv -p /usr/bin/python3.6 venv
 ```
 
 激活venv：

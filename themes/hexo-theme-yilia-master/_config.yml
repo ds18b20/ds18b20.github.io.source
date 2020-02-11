@@ -37,7 +37,7 @@ excerpt_link: more
 # 文章卡片右下角常驻链接，不需要请设置为false
 show_all_link: '展开全文'
 # 数学公式
-mathjax: false
+mathjax: true
 # 是否在新窗口打开链接
 open_in_new: false
 
@@ -68,7 +68,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar:
+avatar: 'https://avatars2.githubusercontent.com/u/26342190?s=400&u=6569eb880e83176e15888edb6272c7d7b736f412&v=4'
 
 #是否开启分享
 share_jia: true

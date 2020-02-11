@@ -9,7 +9,7 @@ tags:
 
 # TensorFlow Object Detection
 
-Object Detection是TensorFlow自带的一个模型识别的API
+Object Detection是TensorFlow自带的一个模型检测的API
 
 # 安装
 
